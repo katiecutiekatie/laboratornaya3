@@ -8,11 +8,8 @@
 
 <body>
     <header>
-
         <h1>Прогресс Банк</h1>
         <img src="logo.png" alt="just logo" hspace="90">
-
-
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -23,14 +20,8 @@
         </nav>
     </header>
 
-    
-
     <main>
-     
-
-
         <section class="main">
-
             <form action="confirmation.html" method="post">
                 <label for="first-name">Имя:</label>
                 <input type="text" id="first-name" name="first-name" required>
@@ -44,19 +35,41 @@
                 <label for="phone">Номер телефона:</label>
                 <input type="text" id="phone" name="phone" required>
 
-                <button type="submit">Открыть счет </button>
+                <button type="button" onclick="saveData()">Открыть счет</button>
             </form>
-
         </section>
 
         <aside>
             <h3>Вместе к успеху!</h3>
-
-
             <a href="money1.png"><img src="money1.png"></a>
             <a href="money3.png"><img src="money3.png"></a>
         </aside>
     </main>
+
+    <script>
+        function saveData() {
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var passport = document.getElementById("passport").value;
+            var phone = document.getElementById("phone").value;
+
+            var data = {
+                FirstName: firstName,
+                LastName: lastName,
+                Passport: passport,
+                Phone: phone,
+            };
+
+            // Создание ссылки для скачивания файла JSON
+            var jsonData = JSON.stringify(data);
+            var blob = new Blob([jsonData], { type: "application/json" });
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement("a");
+            link.href = url;
+            link.download = "data.json";
+            link.click();
+        }
+    </script>
 
 </body>
 </html>
