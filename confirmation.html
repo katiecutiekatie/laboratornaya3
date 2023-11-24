@@ -23,13 +23,30 @@
         </nav>
     </header>
 
+    
+
     <main>
+     
+
+
         <section class="main">
-            <h2>Подтверждение открытия счета</h2>
-            <p>Счет был успешно открыт.</p>
-            <p>Новый клиентский счет:</p>
-            <p><strong>Номер счета:</strong> 74619471746116</p>
-            <p><strong>Баланс:</strong> $1000.00</p>
+
+            <form action="confirmation.html" method="post">
+                <label for="first-name">Имя:</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">Фамилия:</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="passport">Паспортные данные:</label>
+                <input type="text" id="passport" name="passport" required>
+
+                <label for="phone">Номер телефона:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <button type="submit">Открыть счет </button>
+            </form>
+
         </section>
 
         <aside>
